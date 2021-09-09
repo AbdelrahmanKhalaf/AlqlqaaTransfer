@@ -1,0 +1,141 @@
+#schedule {
+    padding: 60px 0 60px 0;
+}
+
+#schedule .nav-tabs li {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+#schedule .nav-tabs a {
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    background-color: #0e1b4d;
+    color: #fff;
+    padding: 10px 100px;
+}
+
+#schedule .nav-tabs a.active {
+    background-color: rgb(248, 34, 73);
+    color: #fff;
+}
+
+#schedule .sub-heading {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0 auto 30px auto;
+}
+
+#schedule .tab-pane {
+    transition: ease-in-out .2s;
+}
+
+#schedule .schedule-item:hover {
+    background-color: #fff;
+}
+
+#schedule .schedule-item time {
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#schedule .schedule-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#schedule .schedule-item h4 span {
+    font-style: italic;
+    color: #19328e;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#schedule .schedule-item p {
+    font-style: italic;
+    color: #152b79;
+    margin-bottom: 0;
+}
+
+.Testimonials {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+#contact .form input,
+#contact .form textarea {
+    border-radius: 36px;
+    height: 46px;
+}
+
+.imgt {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.h-w {
+    height: 384px;
+    overflow: hidden;
+}
+
+.h-w:hover {
+    overflow-y: scroll;
+}
+
+.b-c-g {
+    background-color: #ffffff;
+}
+
+.scrollbar:hover {
+    margin-left: 30px;
+    float: left;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+#style-14::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+    background-color: #CCCCCC;
+}
+
+#style-14::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-14::-webkit-scrollbar-thumb {
+    background-color: #FFF;
+    background-image: -webkit-linear-gradient(90deg, rgba(248, 34, 73, 1) 0%, rgba(248, 34, 73, 1) 25%, transparent 100%, rgba(248, 34, 73, 1) 75%, transparent)
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 34px;
+}
+
+.fon {
+    font-size: 20px;
+}
+
+.fa-li {
+    height: 365px;
+}
+
+#venue .venue-info p {
+    text-align: justify;
+}
+
+#contact {
+    padding: 60px 0;
+    background: #f6f7fd;
+}
+
+.img-intro2 {
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+}

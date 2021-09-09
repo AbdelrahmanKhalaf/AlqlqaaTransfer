@@ -1,0 +1,43 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n> My <span> Offer </span></h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to Alqaqaa </p>
+    </div>
+</section>
+<!--==========================
+ Details Section
+    ============================-->
+<section id="speakers-details" class="wow fadeIn" *ngIf="data">
+    <div class="container">
+        <div class="section-header">
+            <h2 i18n>Offer Details</h2>
+            <p i18n>We are happy that you are with us.</p>
+        </div>
+
+        <div class="row" *ngFor="let dataB of data.offers ">
+            <div class="col-md-6">
+                <img src="http://localhost:5000/{{dataB.avatar}}" alt="Speaker 1" class="img-fluid">
+            </div>
+
+            <div class="col-md-6">
+                <div class="details">
+                    <h2>{{dataB.title}}</h2>
+                    <p>{{dataB.des}}.</p>
+                    <hr>
+                    <h4 class="display" i18n>Shipping Address : </h4> <span class="font"> {{data.address}}</span>
+                    <hr>
+                    <h4 class="display" i18n>Status : </h4> <span *ngIf="data.status===0" [ngClass]="data.status <= 0 ? 'alert alert-warning ' :'alert alert-danger' " i18n>
+                        Processing</span>
+                    <span *ngIf="data.status===1" [ngClass]="data.status <= 1 ? 'alert alert-success ' :'alert alert-danger' " i18n>
+                        Delivered</span>
+                    <span *ngIf="data.status===2" [ngClass]="data.status <= 2 ? 'alert alert-danger ' :'alert alert-danger' " i18n>
+                        Canceled</span>
+                    <span *ngIf="data.status===3" [ngClass]="data.status <= 3 ? 'alert alert-pramiry ' :'alert alert-danger' " i18n>
+                        Agred</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>

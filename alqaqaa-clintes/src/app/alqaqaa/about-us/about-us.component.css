@@ -1,0 +1,9 @@
+#intro p {
+    width: 700px;
+}
+
+@media (min-width: 0px) and (max-width:770px) {
+    #intro p {
+        width: 485px;
+    }
+}

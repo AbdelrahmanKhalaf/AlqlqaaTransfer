@@ -1,0 +1,44 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n><span>Our </span> Services</h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to Our Services </p>
+    </div>
+</section>
+<main id="main">
+    <!--==========================
+Our services    
+============================-->
+    <section id="hotels" class="section-with-bg wow fadeInUp">
+
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Alqaqaa Our Services</h2>
+                <p i18n>Here are some of our services</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6" *ngFor="let service of (services | sort)">
+                    <div class="hotel">
+                        <meta content="{{service.keywords}}" name="keywords" />
+                        <meta content="{{service['des_'+local]}}" name="description">
+                        <div class="hotel-img">
+                            <img src="http://localhost:5000/{{service.avatar}}" alt="Hotel 1" class="img">
+                        </div>
+                        <h3><a routerLink="/services/details-services/{{service._id}}">{{service["title_"+local]}}</a></h3>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-right">{{service["des_"+local]}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>

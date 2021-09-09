@@ -1,0 +1,109 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n><span>Contact </span> Us</h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to contact us </p>
+    </div>
+</section>
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+
+        <div class="container">
+
+            <div class="section-header">
+                <h2 i18n>Contact Us</h2>
+                <p i18n>Nihil officia ut sint molestiae tenetur.</p>
+            </div>
+
+            <div class="row contact-info">
+
+                <div class="col-md-4">
+                    <div class="contact-address">
+                        <i class="ion-ios-location-outline"></i>
+                        <h3 i18n>Address</h3>
+                        <address i18n>A108 Adam Street, NY 535022, USA</address>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-phone">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <h3 i18n>Phone Number</h3>
+                        <p><a href="tel:+0201029272715" i18n>+0201029272715</a></p>
+                        <p><a href="tel:+0201102060674" i18n>+0201102060674</a></p>
+                        <p><a href="tel:+0201220689277" i18n>01220689277</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-email">
+                        <i class="ion-ios-email-outline"></i>
+                        <h3 i18n>Email</h3>
+                        <p><a href="mailto:info@example.com" i18n>info@example.com</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form">
+                <p *ngIf="message" class="alert-success alert" i18n>{{message}}</p>
+                <p *ngIf="errorMessage" class="alert-danger alert">{{errorMessage}}</p>
+                <form [formGroup]="formfeedback" (ngSubmit)="feedbackSend()" role="form" class="contactForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1" i18n>Your Name </label>
+                            <input type="text" name="name" class="form-control" id="name" formControlName="name" />
+                            <div *ngIf="name.touched  && name.invalid" class="error">
+                                <span *ngIf="name.errors.required" i18n>Please
+                                    enter Name.</span>
+                                <span *ngIf="name.errors.minlength" i18n>Name
+                                    must be at least 8 characters.</span>
+                                <span *ngIf="name.errors.maxlength" i18n>Maxlength is 60.</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="label1" i18n>Your Email </label>
+                            <input type="email" class="form-control" name="email" id="email" formControlName="email" />
+                            <span *ngIf="email.touched  && email.invalid" class="error">
+                                <span *ngIf="email.errors.required" i18n>Please
+                                    enter Email.</span>
+                            <span *ngIf="email.errors.minlength" i18n>Email
+                                    must be at least 8 characters.</span>
+                            <span *ngIf="email.errors.maxlength" i18n>Maxlength is 315.</span>
+                            <span *ngIf=" email.errors.email" i18n>Please enter a valid Email</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="label1" i18n>Subject</label>
+                            <input type="text" class="form-control" name="subject" id="subject" formControlName="subject" />
+                            <div *ngIf="subject.touched  && subject.invalid" class="error">
+                                <span *ngIf="subject.errors.required" i18n>Please
+                                    enter subject.</span>
+                                <span *ngIf="subject.errors.minlength" i18n>subject
+                                    must be at least 8 characters.</span>
+                                <span *ngIf="subject.errors.maxlength" i18n>Maxlength is 40.</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="label1" i18n>Message</label>
+                            <textarea class="form-control" name="message" rows="5" formControlName="des"></textarea>
+                            <div *ngIf="des.touched  && des.invalid" class="error">
+                                <span *ngIf="des.errors.required" i18n>Please
+                                enter Message.</span>
+                                <span *ngIf="des.errors.minlength" i18n>Message
+                                must be at least 8 characters.</span>
+                                <span *ngIf="des.errors.maxlength" i18n>Maxlength is 315.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center"><button type="submit" i18n>Send Message</button></div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+</main>

@@ -1,0 +1,35 @@
+<!--==========================
+      Contact Section
+    ============================-->
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n> Update <span>Avatar</span> </h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to Alqaqaa </p>
+    </div>
+</section>
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Welcome to Update Imgae</h2>
+                <p i18n>We are happy to existence you with us.</p>
+            </div>
+            <div class="form">
+                <!-- <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p> -->
+                <form role="form" class="contactForm" (ngSubmit)="fileUpload()">
+                    <div class="form-row">
+                        <label class="label1" i18n>Update My Img</label>
+                        <div class="form-group col-md-12">
+                            <input type="file" name="avatar" class="form-control" id="avatar" (change)="fileSlecet($event)" accept="image/*" />
+                        </div>
+                    </div>
+                    <div class="text-center"><button type="submit" i18n>Update Image</button></div>
+                    <image-cropper [imageChangedEvent]="imageChangedEvent" (imageCropped)="imageCropped($event)" [aspectRatio]="1 / 1" [resizeToWidth]='150' [onlyScaleDown]='true' [cropperMinWidth]='239' [roundCropper]='true' style="width: 400px;height: 500px;">
+                    </image-cropper>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!-- #contact -->

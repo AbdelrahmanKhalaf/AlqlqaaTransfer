@@ -1,0 +1,64 @@
+<!--==========================
+      Contact Section
+    ============================-->
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n><span>Update </span> Informiton </h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to section Update Informiton with us </p>
+    </div>
+</section>
+<main id="main">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Welcome to Section Update Informiton</h2>
+                <p i18n>We are happy to existence you with us.</p>
+            </div>
+            <div class="form">
+                <p *ngIf="errorMessage" class=" alert-danger alert">{{errorMessage}}</p>
+                <form role="form" class="contactForm" [formGroup]="UpdateUser" (ngSubmit)="PutUser()" *ngIf="DataUser">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="label1" i18n>Your Name</label>
+                            <input type="text" name="name" class="form-control" id="name" formControlName="name" [ngModel]="DataUser.name" />
+                            <div *ngIf="name.touched  && name.invalid" class="error">
+                                <span *ngIf="name.errors.required" i18n>Please
+                                        enter Name.</span>
+                                <span *ngIf="name.errors.minlength" i18n>Name
+                                        must be at least 8 characters.</span>
+                                <span *ngIf="name.errors.maxlength" i18n>Maxlength is 315.</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="label1" i18n>Your Phone</label>
+                            <input type="text" name="phone" class="form-control" id="phone" formControlName="phone" [ngModel]="0+DataUser.phone" />
+                            <span class="validation" *ngIf="phone.touched  && phone.invalid" class="error">
+                                    <span *ngIf="phone.errors.required" i18n>Please
+                                        enter Modile.</span>
+                            <span *ngIf="phone.errors.minlength" i18n>Modile
+                                        must be at least 11 characters.</span>
+                            <span *ngIf="phone.errors.maxlength" i18n>Maxlength is 315.</span>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label class="label1" i18n>Your Address</label>
+                            <input type="text" class="form-control" id="address" name="address" formControlName="address" [ngModel]="DataUser.address" />
+                            <span class="validation" *ngIf="address.touched  && address.invalid" class="error">
+                                    <span *ngIf="address.errors.required" i18n>Please enter address.</span>
+                            <span *ngIf="address.errors.minlength" i18n>address
+                                        must be at least 11 characters.</span>
+                            <span *ngIf="address.errors.maxlength" i18n>Maxlength is 315.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center"><button type="submit" i18n>Updaet Your Info </button></div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!-- #contact -->

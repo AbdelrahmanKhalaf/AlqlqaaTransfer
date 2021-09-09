@@ -1,0 +1,8 @@
+.img {
+    height: 257px;
+    max-width: 100%;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: 100%;
+}

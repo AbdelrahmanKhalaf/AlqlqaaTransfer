@@ -1,0 +1,33 @@
+.btn-danger {
+    background-color: #f82249;
+    border-color: #f82249;
+    color: #fff;
+    border-radius: 20px;
+}
+
+;
+.btn-danger :active {
+    background-color: rgba(6, 12, 34, 0.8);
+    border-color: #f82249;
+}
+
+;
+.dropdown-menu>li>a {
+    border-radius: 0px;
+    color: rgba(6, 12, 34, 0.8);
+    border: #f82249 2px groove;
+}
+
+#schedule[_ngcontent-nig-c18] .nav-tabs[_ngcontent-nig-c18] {
+    margin-left: 17%;
+}
+
+.btn-danger {
+    color: #fff
+}
+
+.nav-menu li.buy-tickets a:hover {
+    background: none;
+    color: #ffffff;
+    font-weight: bolder;
+}

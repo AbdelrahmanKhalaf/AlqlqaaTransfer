@@ -1,0 +1,555 @@
+body {
+    background: #fff;
+    color: #2f3138;
+    font-family: "Open Sans", sans-serif;
+    direction: ltr;
+}
+
+a {
+    color: #f82249;
+    transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #f8234a;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: #0e1b4d;
+}
+
+.main-page {
+    margin-top: 70px;
+}
+
+.wow {
+    visibility: hidden;
+}
+
+
+/* Mobile Nav body classes */
+
+body.mobile-nav-active {
+    overflow: hidden;
+}
+
+body.mobile-nav-active #mobile-nav {
+    left: 0;
+}
+
+body.mobile-nav-active #mobile-nav-toggle {
+    color: #fff;
+}
+
+.alert-danger {
+    text-align: center;
+}
+
+.alert-warning {
+    text-align: center;
+}
+
+.alert-primary {
+    text-align: center;
+}
+
+.alert-success {
+    text-align: center;
+}
+
+.txt1 {
+    text-align: center;
+    margin-top: 13px;
+}
+
+.txt2 {
+    text-align: center;
+    margin-top: 13px;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+}
+
+input.error {
+    border: 1px solid #c70000;
+}
+
+#contact .form input,
+#contact .form textarea {
+    padding: 2px 14px;
+}
+
+#speakers-details {
+    background-color: #f6f7fd;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #c70000;
+    outline: 1px solid slategrey;
+}
+
+@media (min-width: 992px) {
+    .mb-lg-0,
+    .my-lg-0 {
+        margin-bottom: 10px!important;
+    }
+}
+
+.display {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.font {
+    font-size: 16px;
+    color: #f8234a;
+}
+
+.warning-message {
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+a {
+    font-weight: 500;
+}
+
+.img {
+    height: 257px;
+    max-width: 100%;
+}
+
+
+/*that is edit navbar*/
+
+.text-right {
+    text-align: left!important;
+}
+
+.float-right {
+    float: left;
+}
+
+#nav-menu-container {
+    width: 79%;
+}
+
+#schedule .schedule-item .speaker {
+    width: 130px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.label1 {
+    float: left;
+    text-align: left;
+    font-size: 20px;
+}
+
+#nav-menu-container {
+    float: right;
+    margin: 0;
+}
+
+header #logo h1 a {
+    float: left;
+}
+
+.pull-left {
+    float: left;
+}
+
+#schedule .schedule-item {
+    border-bottom: 1px solid #cad4f6;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: background-color ease-in-out 0.3s;
+    text-align: left;
+}
+
+
+/*end that is edit navbar*/
+
+
+/* start that is edit testmonial*/
+
+.user1 {
+    width: 90%;
+    display: inline-block;
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+}
+
+@media (min-width: 0px) and (max-width:990px) {
+    .user1 {
+        width: 80%;
+    }
+}
+
+.user {
+    width: 50px;
+    height: 51px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+}
+
+.img-res {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+}
+
+#schedule .schedule-item p {
+    font-style: italic;
+    color: #152b79;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+
+/*end that is edit testmonial*/
+
+
+/*start that is edit services*/
+
+.img {
+    height: 257px;
+    width: 100%;
+}
+
+#hotels a {
+    color: #152b79;
+    text-align: left;
+    display: block;
+}
+
+#hotels .stars {
+    padding: 0 20px;
+    margin-bottom: 5px;
+    text-align: left;
+    display: block;
+}
+
+#hotels p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: #060c22;
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+}
+
+#hotels .section-header a {
+    display: inline-block;
+    text-align: center
+}
+
+
+/*end that is edit services*/
+
+
+/*that is edit venue*/
+
+#venue .venue-info h3 {
+    text-align: left;
+}
+
+#venue .venue-info p {
+    text-align: left;
+}
+
+
+/*end that is edit venue*/
+
+
+/*that is edit offers*/
+
+#buy-tickets .card ul li {
+    text-align: left;
+}
+
+
+/*that is edit offers*/
+
+
+/*that is edit footer*/
+
+#footer .footer-top .footer-info {
+    text-align: left;
+}
+
+#footer .footer-top .footer-info p {
+    text-align: justify;
+    line-height: 20px;
+}
+
+#footer .footer-top h4 {
+    text-align: left;
+}
+
+#footer .footer-top .footer-links ul a {
+    text-align: left;
+}
+
+#footer .footer-top .footer-links {
+    text-align: left;
+}
+
+#footer .footer-top .footer-contact p {
+    text-align: left;
+}
+
+#footer .footer-top .footer-contact {
+    text-align: left;
+}
+
+
+/*that is edit footer*/
+
+
+/*that is edit about*/
+
+#about h3 {
+    text-align: left;
+}
+
+
+/*that is edit about*/
+
+
+/*that is edit progile*/
+
+.m-0 div h3 {
+    display: inline-block;
+    transform: capitalize;
+    font-size: 17px;
+    margin: 0px
+}
+
+.myInfo {
+    display: block;
+    text-align: left;
+}
+
+legend {
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+}
+
+.m-0 {
+    display: block;
+    text-align: left;
+}
+
+.over {
+    width: 197px;
+    overflow: hidden;
+    height: 19px;
+}
+
+#speakers-details .details .social {
+    text-align: left;
+}
+
+#header #logo h1 a,
+#header #logo h1 a:hover {
+    color: #fff;
+    font-weight: 900;
+    float: left;
+}
+
+.m-0 div label {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.m-0 div h3 {
+    display: inline-block;
+    transform: capitalize;
+    font-size: 17px;
+    margin: 0px
+}
+
+.m-l-10 {
+    width: 273px;
+    margin-right: 8px;
+    height: 241px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+}
+
+@media (min-width: 768px) and (max-width:1199px) {
+    .m-l-10 {
+        width: 208px;
+        height: 182px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 13px;
+        box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+    }
+}
+
+@media (min-width: 765px) and (max-width:992px) {
+    .m-l-10 {
+        width: 208px;
+        height: 155px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 13px;
+        box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+    }
+}
+
+@media (min-width: 0px) and (max-width:768px) {
+    .m-l-10 {
+        padding: 10px;
+        width: 100%;
+        height: 357px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+    }
+    .nav-menu {
+        font-size: 12px
+    }
+    .m-0 div label {
+        font-size: 15px;
+        margin-left: 7px;
+    }
+    .m-0 div h3 {
+        font-size: 16px;
+    }
+    .m-0 .m-l-10 {
+        display: block;
+    }
+}
+
+@media (min-width: 0px) and (max-width:991px) {
+    header #logo h1 a {
+        float: right;
+    }
+}
+
+
+/*that is edit progile*/
+
+.over {
+    width: 161px;
+    overflow: hidden;
+    height: 19px;
+}
+
+
+/*that is edit details*/
+
+#speakers-details .details p {
+    text-align: left
+}
+
+.details {
+    text-align: left;
+}
+
+#speakers-details .details h2 {
+    text-align: left;
+}
+
+
+/*that is edit details*/
+
+
+/*that FQ*/
+
+#faq #faq-list a {
+    text-align: left;
+}
+
+.spiner {
+    border: 16px solid silver;
+    border-top: 16px solid red;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#header #logo h1 a {
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+
+#header #logo img {
+    float: left
+}
+
+@media (min-width: 0px) and (max-width:991px) {
+    #header #logo img {
+        float: right;
+        margin-left: 10px;
+    }
+    #header #logo h1 a {
+        letter-spacing: -2px;
+    }
+}
+
+#hotels .hotel {
+    box-shadow: 0px 0px 30px rgb(17, 35, 99, 0.25);
+    border-radius: 61px;
+    border-bottom: red 2px solid;
+}
+
+.iframe_fac {
+    width: 100%;
+}

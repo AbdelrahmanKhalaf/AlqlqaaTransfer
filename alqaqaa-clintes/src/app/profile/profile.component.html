@@ -1,0 +1,274 @@
+<title *ngIf='dataUs'>Alqaqaa | {{dataUs.name}}</title>
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n> <span> _ </span> My Profile</h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to Alqaqaa </p>
+    </div>
+</section>
+<main id="main" class="main-page">
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Welcome you to alqaqaa </h2>
+                <p i18n>we are happy that you are with us.</p>
+            </div>
+            <p class="alert-danger alert" *ngIf="erorrma" i18n>{{erorrma}}</p>
+            <p class="alert-danger alert" *ngIf="erorrma" i18n>{{errorWri}} , Can you register with us from here <a routerLink="/register">Register</a> or <a routerLink="/login">Login</a></p>
+            <div class="boredr">
+                <div class="row" *ngIf="dataUs">
+                    <legend class="myProfile" i18n>
+                        My Profile
+                    </legend>
+                    <div class="col-md-4 lable">
+
+                        <div class="myAvatar">
+
+                            <legend class="lable" i18n>
+                                My Avatar
+
+                            </legend>
+
+                            <div>
+                                <img src="http://localhost:5000/{{dataUs.avatar}}" alt="Speaker 1" class="img-fluid m-l-10">
+                            </div>
+                            <br>
+                            <div class="nav-menu ">
+                                <li class="buy-tickets float-right"><a routerLink='/update-avatar/{{dataUs._id}}' i18n>Update
+                                        Avatar</a></li>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-md-8">
+                        <div class="details">
+
+                            <div class="myInfo">
+                                <p>
+
+                                    <legend class="lable" *ngIf="social" i18n>
+                                        My Info
+
+                                    </legend>
+                                </p>
+                                <!-- that  is info col lg -->
+
+                                <div class="row">
+                                    <div class="lable col-md-7 hidden-md hidden-xs hidden-sm visible-lg">
+                                        <label i18n> Email : </label> <span>{{dataUs.email}}</span>
+                                        <br>
+                                        <label *ngIf="dataUs.address" i18n> Address : </label> <span *ngIf="dataUs.address">
+                                            {{dataUs.address}}</span>
+                                        <label *ngIf="!dataUs.address" i18n> Phone : </label> <span *ngIf="!dataUs.address">
+                                            0{{dataUs.phone}}</span>
+
+                                    </div>
+                                    <div class="lable col-md-5 hidden-md hidden-xs hidden-sm visible-lg ">
+                                        <label i18n> Name : </label> <span>{{dataUs.name | slice:0:30}}</span>
+                                        <br>
+                                        <label *ngIf="dataUs.address" i18n> Phone : </label> <span *ngIf="dataUs.address"> 0{{dataUs.phone}}</span>
+                                    </div>
+                                </div>
+                                <div class="nav-menu  hidden-md hidden-xs hidden-sm   visible-lg">
+                                    <li class="buy-tickets float-right" *ngIf="dataUs"><a routerLink='/update-info/{{dataUs._id}}' i18n>Update
+                                            Info</a>
+                                        <a class="inf-sm" routerLink='change-password' i18n>Change
+                                            Password</a>
+                                    </li>
+
+                                </div>
+                                <!-- that  is info col md xs sm -->
+                                <div class="row">
+                                    <div class="lable col-xs-12 visible-md visible-xs visible-sm hidden-lg">
+                                        <label i18n> Email : </label> <span>{{dataUs.email}}</span>
+                                        <br>
+                                        <label *ngIf="dataUs.address" i18n> Address : </label> <span *ngIf="dataUs.address">
+                                            {{dataUs.address}}</span>
+                                        <br>
+                                        <label *ngIf="!dataUs.address" i18n> Phone : </label> <span *ngIf="!dataUs.address">
+                                            0{{dataUs.phone}}</span>
+                                        <label i18n> Name : </label> <span>{{dataUs.name | slice:0:30}}</span>
+                                        <br>
+                                        <label *ngIf="dataUs.address" i18n> Phone : </label> <span *ngIf="dataUs.address"> 0{{dataUs.phone}}</span>
+
+                                    </div>
+                                </div>
+                                <div class="nav-menu">
+                                    <li class="buy-tickets float-right visible-md visible-xs visible-sm   hidden-lg"><a class="inf-sm" routerLink='/update-info/{{dataUs._id}}' i18n>Update
+                                            Info</a>
+                                        <a class="inf-sm" routerLink='change-password' i18n>Change
+                                            Password</a>
+                                    </li>
+                                </div>
+                            </div>
+
+                            <br>
+                            <!-- that  is Social col lg -->
+
+                            <div class="mysocial  hidden-md hidden-xs hidden-sm visible-lg ">
+                                <div>
+                                    <legend class="lable" *ngIf="social" i18n>
+                                        My Social
+
+                                    </legend>
+                                </div>
+                                <div class="social" *ngIf="social">
+                                    <a *ngIf="dataUs.twitter" href="{{dataUs.twitter}}" target="_blank"><i
+                                            class="fa fa-twitter"></i></a>
+                                    <a *ngIf="dataUs.facebook" href="{{dataUs.facebook}}" target="_blank"><i
+                                            class="fa fa-facebook"></i></a>
+                                    <a *ngIf="dataUs.instagram" href="{{dataUs.instagram}}" target="_blank"><i
+                                            class="fa fa-instagram"></i></a>
+                                    <a *ngIf="dataUs.google" href="{{dataUs.google}}" target="_blank"><i
+                                            class="fa fa-google-plus"></i></a>
+                                    <a *ngIf="dataUs.linkedin" href="{{dataUs.linkedin}}" target="_blank"><i
+                                            class="fa fa-linkedin"></i></a>
+                                </div>
+                                <div class="nav-menu ">
+                                    <li class="buy-tickets float-right visible-md hidden-xs hidden-sm visible-lg "><a routerLink='/update-social/{{dataUs._id}}' i18n>Update
+                                            Social
+                                        </a></li>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- that  is Social col md xs sm -->
+                <div class="details">
+                    <div class="row">
+                        <div class=" col-xs-12 visible-md visible-xs visible-sm hidden-lg">
+                            <div class="mysocial  ">
+                                <div>
+                                    <legend class="lable" *ngIf="social" i18n>
+                                        My Social
+
+                                    </legend>
+                                </div>
+                                <div class="social" *ngIf="social">
+                                    <a *ngIf="dataUs.twitter" href="{{dataUs.twitter}}" target="_blank"><i
+                                            class="fa fa-twitter"></i></a>
+                                    <a *ngIf="dataUs.facebook" href="{{dataUs.facebook}}" target="_blank"><i
+                                            class="fa fa-facebook"></i></a>
+                                    <a *ngIf="dataUs.instagram" href="{{dataUs.instagram}}" target="_blank"><i
+                                            class="fa fa-instagram"></i></a>
+                                    <a *ngIf="dataUs.google" href="{{dataUs.google}}" target="_blank"><i
+                                            class="fa fa-google-plus"></i></a>
+                                    <a *ngIf="dataUs.linkedin" href="{{dataUs.linkedin}}" target="_blank"><i
+                                            class="fa fa-linkedin"></i></a>
+                                </div>
+                                <div class="nav-menu ">
+                                    <li class="buy-tickets float-right"><a routerLink='/update-social/{{dataUs}}' i18n>Update
+                                            Social
+                                        </a></li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="myOrders">
+                            <p *ngIf="errorMessage" class="alert-danger alert">{{errorMessage}}</p>
+                            <p *ngIf="message" class="alert-success alert" i18n>{{message}}</p>
+                            <legend class="lable" *ngIf="dataBusiness" i18n>
+                                My Orders
+                            </legend>
+                            <div *ngIf="dataBusiness">
+                                <div *ngFor="let dataBusiness of dataBusiness">
+                                    <div class=" m-0 " *ngFor="let oreder of dataBusiness.business">
+                                        <div class="bordreO details">
+                                            <img src="http://localhost:5000/{{oreder.avatar}}" alt="Speaker 1" class="img-fluid" sizes="300px">
+                                            <label i18n>Title : </label>
+                                            <h3 class="over1">
+                                                <a routerLink="details-user-orders/{{dataBusiness._id}}">
+                                                    {{oreder["title_"+local]}}
+                                                </a>
+                                            </h3>
+                                            <label i18n>Out Date : </label>
+                                            <h3>{{dataBusiness.outDate | date : "d MMM " }}</h3>
+
+                                            <label i18n>Status: </label>
+                                            <h3 *ngIf="dataBusiness.status===0" [ngClass]="dataBusiness.status <= 0 ? 'alert alert-info ' :'alert alert-danger' " i18n>
+                                                Processing</h3>
+                                            <h3 *ngIf="dataBusiness.status===1" [ngClass]="dataBusiness.status <= 1 ? 'alert alert-success ' :'alert alert-danger' " i18n>
+                                                Delivered</h3>
+                                            <h3 *ngIf="dataBusiness.status===2" [ngClass]="dataBusiness.status <= 2 ? 'alert alert-danger ' :'alert alert-danger' " i18n>
+                                                Canceled</h3>
+                                            <h3 *ngIf="dataBusiness.status===3" [ngClass]="dataBusiness.status <= 3 ? 'alert alert-primary ' :'alert alert-danger' " i18n>
+                                                Agreed</h3>
+                                            <label i18n>Address: </label>
+                                            <h3 class="">{{dataBusiness.address|slice:0:30}}</h3>
+                                            <br>
+                                            <h3 *ngIf="dataBusiness.status === 1" class="text-center alert-warning alert " i18n>Warning message : </h3>
+                                            <h3 *ngIf="dataBusiness.status=== 1   " class="warning-message lead" i18n>
+                                                We will delete the order after 24 hours from now.</h3>
+                                            <h3 *ngIf="dataBusiness.status === 2" class="text-center alert-warning alert " i18n>Warning message : </h3>
+                                            <h3 *ngIf="dataBusiness.status=== 2   " class="warning-message lead" i18n>
+                                                We will delete the order after 24 hours from now.</h3>
+                                            <div class="nav-menu size ">
+                                                <li class="buy-tickets float-right text-center"><a *ngIf=" dataBusiness.status=== 0" (click)="deleteOrderBusiness(dataBusiness._id)" routerLink='/profile' i18n>Delete Oreder
+                                                    </a>
+                                                </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="dataOffers">
+                                <legend class="lable" i18n>
+                                    My Offers
+                                </legend>
+                                <div class=" m-0 " *ngFor="let dataOffers of dataOffers">
+                                    <div class="bordreO details" *ngFor="let offer of dataOffers.offers">
+                                        <img src="http://localhost:5000/{{offer.avatar}}" alt="Speaker 1" class="img-fluid" sizes="300px">
+                                        <label i18n>Title : </label>
+                                        <h3 class="over1">
+                                            <a routerLink="details-user-offers/{{dataOffers._id}}">
+                                                {{offer["title_"+local]}}
+                                            </a>
+                                        </h3> <label i18n>Out Date : </label>
+
+                                        <h3>{{dataOffers.outDate | date : "d MMM " }}</h3>
+                                        <label i18n>Status: </label>
+                                        <h3 *ngIf="dataOffers.status===0" [ngClass]="dataOffers.status <= 0 ? 'alert alert-info ' :'alert alert-danger' " i18n>
+                                            Processing</h3>
+                                        <h3 *ngIf="dataOffers.status===1" [ngClass]="dataOffers.status <= 1 ? 'alert alert-success ' :'alert alert-danger' " i18n>
+                                            Delivered</h3>
+                                        <h3 *ngIf="dataOffers.status===2" [ngClass]="dataOffers.status <= 2 ? 'alert alert-danger ' :'alert alert-danger' " i18n>
+                                            Canceled</h3>
+                                        <h3 *ngIf="dataOffers.status=== 3" [ngClass]="dataOffers.status <= 3 ? 'alert alert-primary ' :'alert alert-danger' " i18n>
+                                            Agreed</h3>
+                                        <label i18n>Address: </label>
+                                        <h3 class="">{{dataOffers.address| slice:0:30}}</h3>
+                                        <br>
+                                        <h3 *ngIf="dataOffers.status === 1" class="text-center alert-warning alert " i18n>Warning message : </h3>
+                                        <h3 *ngIf="dataOffers.status === 1  " class="warning-message lead" i18n> We will delete the order after 24 hours from now.</h3>
+                                        <h3 *ngIf="dataOffers.status === 2" class="text-center alert-warning alert " i18n>Warning message : </h3>
+                                        <h3 *ngIf="dataOffers.status === 2  " class="warning-message lead" i18n> We will delete the order after 24 hours from now.</h3>
+                                        <div class="nav-menu size ">
+                                            <li class="buy-tickets float-right text-center" *ngIf="dataOffers.status ==0 " (click)="deleteOrderOffers(dataOffers._id)"><a class="" routerLink='/profile' i18n>Delete Offer
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+</main>

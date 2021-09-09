@@ -1,0 +1,87 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n><span>Our </span> Business</h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to Our Business </p>
+    </div>
+</section>
+<main id="main">
+
+    <section id="speakers" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Alqaqaa Our Business</h2>
+                <p i18n>Here are some of our customars</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6" *ngFor="let busines of busniess | sort">
+                    <div class="speaker">
+                        <meta content="{{busines.keywords}}" name="keywords" />
+                        <meta content="{{busines['des_'+local]}}" name="description">
+                        <img src="http://localhost:5000/{{busines.avatar}}" alt="Speaker 1" class="img">
+                        <div class="details">
+                            <h3><a routerLink="/home/details-business/{{busines._id}}">{{busines['title_'+local]}}</a>
+                            </h3>
+                            <p i18n>Share On </p>
+                            <div class="social">
+                                <a target="_blank" href="https://twitter.com/intent/tweet?url=https://www.alqaqaamovingfurniture.com/home/details-business/{{busines._id}}"><i class="fa fa-twitter"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.alqaqaamovingfurniture.com/home/details-business/{{busines._id}}"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="https://www.linkedin.com/uas/login?session_redirect=https://www.alqaqaamovingfurniture.com/home/details-business/{{busines._id}}"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                            <a type="submit" data-toggle="modal" href="#buy-ticket-modal-business" class="fon" i18n>Buy
+                                Now</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="buy-ticket-modal-business" class="modal ">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" i18n>Buy Order</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p *ngIf='!getTocken() && errorMessageBusiness' class=" alert-danger alert" i18n>
+                                {{errorMessageBusiness}},you not logged with us after
+                                <a routerLink="/login">logging in </a> or <a routerLink="/register">registering</a> you can buy order</p>
+                            <p *ngIf='errorMessageBusiness' class=" alert-danger alert" i18n>
+                                {{errorMessageBusiness}}</p>
+                            <p *ngIf='messageBusiness' class="alert alert-primary " i18n>{{messageBusiness}} Chake Your Profile
+                                <a routerLink='/profile' data-dismiss="modal" aria-label="Close">My Profile</a></p>
+
+                            <form [formGroup]="addBusiness" (ngSubmit)="saveAddBusiness()">
+
+                                <div class="form-group">
+                                    <label class="label1" i18n>Your Address</label>
+                                    <input type="text" class="form-control" name="address" id="address" placeholder="Your Address" formControlName="address">
+                                </div>
+
+                                <div class="form-group">
+                                    <select id="ticket-type" name="ticket-type" class="form-control h" formControlName="businessId">
+                                        <option value="" i18n>-- Select Your Order Tilte --</option>
+                                        <option *ngFor="let busines of busniess" [value]="busines._id">
+                                            {{busines["title_"+local]}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-dangry" i18n>Buy Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+        </div>
+    </section>
+
+
+</main>

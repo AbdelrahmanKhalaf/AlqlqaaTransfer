@@ -1,0 +1,41 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n><span>Activate </span>Your Email</h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to section Activate Email</p>
+    </div>
+</section>
+<main id="main  myInfo">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Welcome to section Activate Email</h2>
+                <p i18n>We are happy to existence you with us.</p>
+            </div>
+            <div class="form" *ngIf="!token">
+                <p *ngIf="errorMessage" class="alert-danger alert">{{errorMessage}}</p>
+                <p *ngIf="errorMessagePad" class="alert-danger alert">{{errorMessagePad}}</p>
+                <p *ngIf="message" class="alert-success alert" i18n>{{message}} <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl" target="_blank">Click here</a></p>
+                <p *ngIf="messageWo" class="alert-primary alert" i18n>{{messageWo}}</p>
+                <form role="form" [formGroup]="ActivateEmail" (ngSubmit)="ActivatedEmail()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-md-offset-3">
+                            <label class="label1 res" i18n>Your Email</label>
+                            <input type="email" name="email " class="form-control res" id="email" formControlName="email" />
+                            <span *ngIf="(email.touched  ||errorMessagePad!='')&& email.invalid" class="error res">
+                                <span *ngIf="email.errors.required" i18n>Please
+                                    enter Email.</span>
+                            <span *ngIf=" email.errors.email" i18n>Please enter a valid Email</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-center"><button class="text-center" type="submit" i18n>Send Link Activate Your Email</button></div>
+                </form>
+            </div>
+            <div class="myInfo" *ngIf="token">
+                <p *ngIf="errorMessage" class="alert-danger alert">{{errorMessage}}</p>
+                <p *ngIf="message" class="alert-success alert" i18n>{{message}}</p>
+            </div>
+        </div>
+
+    </section>
+</main>

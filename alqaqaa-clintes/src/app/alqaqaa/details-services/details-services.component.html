@@ -1,0 +1,43 @@
+<div *ngIf="data">
+    <meta content="{{data.keywords}}" name="keywords" />
+    <meta content="{{data['des_'+local]}}" name="description">
+</div>
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n> Details <span> Service </span></h1>
+        <p class="mb-4 pb-0" i18n>Welocme you to Alqaqaa </p>
+    </div>
+</section>
+<section id="speakers-details" class="wow fadeIn" *ngIf="data">
+    <div class="container">
+        <div class="section-header">
+            <h2 i18n>Service Details</h2>
+            <p i18n>We are happy that you are with us.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="http://localhost:5000/{{data.avatar}}" alt="Speaker 1" class="img-fluid">
+            </div>
+
+            <div class="col-md-6">
+                <div class="details">
+                    <h2>{{data["title_"+local]}}</h2>
+                    <p>{{data["des_"+local]}}.</p>
+                    <hr>
+                    <h4 class="display" i18n>Out Date : </h4> <span class="font"> {{data.outDate | date}}</span>
+                    <hr>
+                    <div class="speaker">
+
+                        <p i18n>Share On </p>
+                        <div class="social">
+                            <a target="_blank" href="https://twitter.com/intent/tweet?url=https://www.alqaqaamovingfurniture.com/home/details-services/{{data._id}}"><i class="fa fa-twitter"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.alqaqaamovingfurniture.com/home/details-services/{{data._id}}"><i class="fa fa-facebook"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/uas/login?session_redirect=https://www.alqaqaamovingfurniture.com/home/details-services/{{data._id}}"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

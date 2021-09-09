@@ -1,0 +1,602 @@
+<section id="intro">
+    <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0" i18n><span>Alqaqaa </span>Company,<br>Register with us to get more <span> offers</span>
+        </h1>
+        <p class="mb-4 pb-0" i18n>1-12 , Alqaqaa Company Center, Egypt</p>
+        <a href="https://www.youtube.com/watch?v=Jz1oXPi8CJs" target="_blank" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+        <a routerLink="/register" class="about-btn scrollto" i18n>Get Started</a>
+    </div>
+
+</section>
+
+<main id="main">
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 i18n>About Alqaqaa Company </h2>
+                    <p i18n>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in est ut optio sequi unde.</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3 i18n>Where</h3>
+                    <p i18n>Downtown Conference Center,Egypt</p>
+                </div>
+                <div class="col-lg-3">
+                    <h3 i18n>When</h3>
+                    <p i18n>Monday to Wednesday<br>10-12 December</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="hotels" class="section-with-bg wow fadeInUp">
+
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Alqaqaa Our Services</h2>
+                <p i18n>Here are some of our services</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6" *ngFor="let service of (services | slice:0:6) | sort">
+                    <div class="hotel">
+                        <meta content="{{service.keywords}}" name="keywords" />
+                        <meta content="{{service['des_'+local]}}" name="description">
+                        <div class="hotel-img">
+                            <img src="http://localhost:5000/{{service.avatar}}" alt="Hotel 1" class="img">
+                        </div>
+                        <h3><a routerLink="/home/details-services/{{service._id}}">{{service["title_"+local]}}</a></h3>
+                        <div class="stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-right">{{service["des_"+local] | slice:0:70}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="section-header">
+                <h3 class="text-center"> <a routerLink="our-services" i18n>View All Our Services</a>
+                </h3>
+            </div>
+        </div>
+
+    </section>
+    <!-- alqaqaa business-->
+    <section id="speakers" class="wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Alqaqaa Our Business</h2>
+                <p i18n>Here are some of our customars</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6" *ngFor="let busines of (busniess | slice:0:6) | sort">
+                    <meta content="{{busines.keywords}}" name="keywords" />
+                    <meta content="{{busines['des_'+local]}}" name="description">
+                    <div class="speaker">
+                        <img src="http://localhost:5000/{{busines.avatar}}" alt="Speaker 1" class="img">
+                        <div class="details">
+                            <h3><a routerLink="/home/details-business/{{busines._id}}">{{busines['title_'+local]}}</a>
+                            </h3>
+                            <p i18n>Share On </p>
+                            <div class="social">
+                                <a target="_blank" href="https://twitter.com/intent/tweet?url=https://www.alqaqaamovingfurniture.com/home/details-business/{{busines._id}}"><i class="fa fa-twitter"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.alqaqaamovingfurniture.com/home/details-business/{{busines._id}}"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="https://www.linkedin.com/uas/login?session_redirect=https://www.alqaqaamovingfurniture.com/home/details-business/{{busines._id}}"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                            <a type="submit" data-toggle="modal" href="#buy-ticket-modal-business" class="fon" i18n>Buy
+                                Now</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="section-header">
+                <h3 class="text-center"> <a routerLink="business" i18n>View All Our Business</a>
+                </h3>
+            </div>
+            <div id="buy-ticket-modal-business" class="modal ">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" i18n>Buy Order</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p *ngIf='!getTocken() && errorMessageBusiness' class=" alert-danger alert" i18n>
+                                {{errorMessageBusiness}},you not logged with us after
+                                <a routerLink="/login">logging in </a> or <a routerLink="/register">registering</a> you can buy order</p>
+                            <p *ngIf='errorMessageBusiness' class=" alert-danger alert" i18n>
+                                {{errorMessageBusiness}}</p>
+                            <p *ngIf='messageBusiness' class="alert alert-primary " i18n>{{messageBusiness}} Chake Your Profile
+                                <a routerLink='/profile' data-dismiss="modal" aria-label="Close">My Profile</a></p>
+
+                            <form [formGroup]="addBusiness" (ngSubmit)="saveAddBusiness()">
+
+                                <div class="form-group">
+                                    <label class="label1" i18n>Your Address</label>
+                                    <input type="text" class="form-control" name="address" id="address" placeholder="Your Address" formControlName="address">
+                                </div>
+
+                                <div class="form-group">
+                                    <select id="ticket-type" name="ticket-type" class="form-control h" formControlName="businessId">
+                                        <option value="" i18n>-- Select Your Order Tilte --</option>
+                                        <option *ngFor="let busines of busniess" [value]="busines._id">
+                                            {{busines["title_"+local]}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-dangry" i18n>Buy Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+        </div>
+
+    </section>
+
+    <!--==========================
+      Venue Section
+    ============================-->
+    <section id="venue" class="wow fadeInUp">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h2 i18n>Alqaqaa Venue</h2>
+                <p i18n>Alqaqaa venue location info and gallery</p>
+            </div>
+            <div class="row no-gutters" style="overflow:hidden;">
+
+                <div class="col-lg-4 venue-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13820.272373681142!2d31.1959169!3d30.0062011!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa38d758d1b747b2c!2z2LTYsdmD2Kkg2KfZhNmC2LnZgtin2Lkg2YTZhNmG2YLZhA!5e0!3m2!1sar!2seg!4v1574017318945!5m2!1sar!2seg"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+                <div class="col-lg-8 venue-info">
+                    <div class="row justify-content-center">
+                        <div class="col-11 col-lg-8">
+                            <h3 i18n>Company Alqaqaa, King Faisal Street, Tabaq, Kaabish</h3>
+                            <p i18n>Iste nobis eum sapiente sunt enim dolores labore accusantium autem. Cumque beatae ipsam. Est quae sit qui voluptatem corporis velit. Qui maxime accusamus possimus. Consequatur sequi et ea suscipit enim nesciunt quia velit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid venue-gallery-container">
+            <div class="row no-gutters">
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/1.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/1.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/2.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/3.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/3.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/4.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/4.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/5.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/5.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/6.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/6.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/7.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/7.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/8.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/8.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/9.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/9.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/10.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/10.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/11.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/11.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="venue-gallery">
+                        <a href="./assets/img/venue-gallery/12.jpg" class="venobox" data-gall="venue-gallery">
+                            <img src="./assets/img/venue-gallery/12.jpg" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!--==========================
+      Sponsors Section
+    ============================-->
+    <section id="supporters" class="section-with-bg wow fadeInUp">
+        <div class="container">
+            <div class="section-header">
+                <h2 i18n>Sponsors</h2>
+            </div>
+
+            <div class="row no-gutters supporters-wrap clearfix">
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/1.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/2.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/3.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/9.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/5.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/6.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/7.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="supporter-logo">
+                        <img src="./assets/img/supporters/8.gif" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==========================
+        F.A.Q Section
+      ============================-->
+    <section id="faq" class="wow fadeInUp">
+
+        <div class="container">
+
+            <div class="section-header">
+                <h2 i18n>F.A.Q </h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <ul id="faq-list" *ngIf="local!='en'">
+
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp;1- استعن بشركة متخصصة
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    أفضل شيء تفعله هو أن تقوم بطلب شركة نقل متخصصة، و بهذا توكل عبء الأحمال الثقيلة الى الخبراء، عمال النقل المتخصصين يعلمون كيف ينفذون العمل بأقصى كفاءة وأقل جهد. خبراء النقل يعلمون كيف يحافظون على المفروشات أثناء النقل، وكذلك كيف يعبرون بها السلالم الضيقة
+                                    وأبواب الغرف. والأهم من ذلك أنهم يعلمون جيدا كيفية وضع المفروشات والصناديق في سيارة النقل مع أفضل استغلال للمساحة ودون أن يتعرض أي شيء للضرر خلال النقل. اتفق مع شركة النقل قبل الموعد المحدد بشهر على الأقل.
+
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-toggle="collapse" href="#faq2" class="collapsed">&nbsp; &nbsp;2- رتب ممتلكاتك
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq2" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    قبل أن تبدأ في حزم أمتعتك عليك ترتيب ممتلكاتك، حاول إجراء جرد شامل لكل غرف المنزل لتقرر ما سوف تحتفظ به وما تريد التبرع به وما سوف تعرضه للبيع. عليك أن تكون حاسما في تلك المرحلة، ادخل كل غرفة ومعك حقيبتين، إحداهما لتضع فيها الأشياء التي ترغب في التبرع
+                                    بها والأخرى للقمامة. يجب أن تضع أي غرض لم يتم استعماله منذ أكثر من سنة في إحدى الحقيبتين. وإذا ما كان لديك أشياء ثمينة لا تستعملها يمكنك محاولة بيعها. تذكر أنه كلما كان الحمل أخف كان النقل أسهل وترتيب المنزل الجديد
+                                    أبسط، لا تثقل حملك بنقل أغراض لا تحتاج إليها. عليك القيام بعملية الجرد هذه قبل النقل باسبوعين على الأقل.
+
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-toggle="collapse" href="#faq3" class="collapsed">&nbsp; &nbsp;3- احزم امتعتك بذكاء
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq3" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    ستعمل الصناديق الكبيرة للأغراض خفيفة الوزن مثل الوسائد وأغطية السرير والملابس، والصناديق الأصغر للأغراض الأثقل وزنا وحقائب السفر التي يمكن جرها لنقل الأشياء ثقيلة الوزن مثل الكتب. وحاول ألا تملأ الصناديق أكثر من اللازم لأن هذا يجعل حملها أكثر صعوبة. احزم
+                                    الأشياء القابلة للكسر بداخل منشفة أو قم بلفها جيدا ثم ضعها داخل صندوقين من أجل المزيد من الحماية. وان لم تقدر علي فعل هذا دعنا نغلف نحن للك متلكاتك بذكاء عليك أن تبدأ في حزم أمتعتك بمجرد انتهائك من عملية جرد ممتلكاتك.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-toggle="collapse" href="#faq4" class="collapsed">&nbsp; &nbsp;4- حاول أن تحزم أمتعتك
+                                وتفرغها بترتيب منطقي
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq4" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    ابدأ حزم أمتعتك من المطبخ، فهو أكثر غرفة في المنزل تستغرق وقتا لكثرة وتنوع الأغراض فيه. سوف تشعر بعد انتهائك منه أنك أنجزت أكثر من نصف العمل المطلوب. ابدأ تفريغ أمتعتك في المنزل الجديد بترتيب غرفة الأطفال، ساعدهم على الاستقرار أولا وبهذا يمكنهم اللعب
+                                    أو المذاكرة بينما تتفرغ أنت لبقية المنزل.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-toggle="collapse" href="#faq5" class="collapsed">&nbsp; &nbsp;5- ضع بطاقات تعريفية
+                                على الصناديق
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq5" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    هذه الخطوة أساسية وتوفر عليك الكثير من الوقت والجهد، ضع على كل صندوق بطاقة تذكر محتويات الصندوق ووضعه الصحيح والغرفة التي سوف يوضع بها. تذكر أن تضع البطاقات على جانب الصندوق ليمكنك رؤيتها حتى عندما توضع الصناديق فوق بعضها. </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-toggle="collapse" href="#faq6" class="collapsed">&nbsp; &nbsp;6- اختر لونا لكل غرفة
+                                في المنزل
+
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq6" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    اختر لونا لكل غرفة في المنزل وضع بطاقات بهذا اللون على باب الغرفة وعلى قطع الأثاث والصناديق المخصصة لتلك الغرفة. و بهذا يسهل على عمال النقل وضع كل شيء في مكانه الصحيح.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" href="#faq6" class="collapsed">&nbsp; &nbsp;7- احضر شركة تنظيف
+
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq6" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    حاول إحضار شركة متخصصة لتنظيف المنزل في اليوم السابق ليوم النقل، وبهذا يمكنك البدء في تفريغ أمتعتك بمجرد وصولك الى المنزل. كما يمكنك ذلك أيضا من استعمال المطبخ والحمامات فور وصولك.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" href="#faq6" class="collapsed">&nbsp; &nbsp;8- حضر حقيبة لأول ليلة
+                                في المنزل الجديد
+
+
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq6" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    من الأفضل أن يحضر كل فرد في الأسرة حقيبة صغيرة يضع بها الأغراض التي سوف يحتاج إليها أول ليلة في المنزل. يمكنك أيضا تحضير صندوق صغير تضع به الأغراض التي سوف تحتاجها الأسرة أول ليلة مثل القهوة ووجبات خفيفة وصندوق إسعافات أولية للطوارئ. هكذا يمكنك النوم
+                                    أول ليلة حتى إذا لم تتمكن من الانتهاء من تفريغ الأمتعة وترتيب المنزل بأكمله أول يوم.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" href="#faq6" class="collapsed">&nbsp; &nbsp;9- لا تنس أن تفرغ
+                                الثلاجة
+
+
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq6" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    حاول الاقتصاد في شراء المواد الغذائية قبل النقل من المنزل بأسبوعين حتى يمكنك استهلاك الأطعمة الموجودة بالمنزل. تذكر أيضا إزالة الصقيع من الثلاجة ومسحها جيدا قبل النقل بيوم كامل.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" href="#faq6" class="collapsed">&nbsp; &nbsp;10- حاول الاسترخاء
+
+                                <i class="fa fa-minus-circle"></i></a>
+                            <div id="faq6" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    حاول أن تسترخي وتذكر أن كل شيء سوف يكون على ما يرام، سوف تجد عملية النقل من المنزل أكثر بساطة إذا احتفظت بهدوء أعصابك وحسن دعابتك.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <!--eng-->
+                    <ul id="faq-list" *ngIf="local!='ar'">
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp;1- Hiring a
+                                specialized company
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    The best thing to do is to order a specialized transportation company, thereby delegating the heavy loads to the experts, specialist transport workers who know how to carry out the work with maximum efficiency and with minimal effort. Transportation experts
+                                    know how to preserve furnishings during transport, as well as how to navigate narrow staircases and room doors. Most importantly, they know very well how to place furniture and boxes in a transport vehicle with the
+                                    best use of space and without any damage during transportation. Agree with the transport company at least one month before the specified date.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp;2- Arrange your
+                                belongings
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    Before you start packing your luggage, you should arrange your belongings, try to conduct a comprehensive inventory of all rooms in the house to decide what you will keep, what you want to donate, and what you will offer for sale. You have to be decisive
+                                    at this stage, go into every room with two bags, one to put in the things that you wish to donate and the other to garbage. You must place any item that has not been used for more than a year in one of the two bags.
+                                    If you have valuables that you do not use, you can try to sell them. Remember that the lighter the load, the easier it is to move and arranging the new home is simpler. Don't overburden your load by transporting items
+                                    that you do not need. You must complete this inventory at least two weeks before the transfer.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp; 3- Pack your luggage
+                                smartly
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    Use large boxes for lightweight items like pillows, bed linen and clothes, smaller boxes for heavier items and travel bags that can be towed for carrying heavy items like books. And try not to fill the boxes too much, as this makes carrying them more
+                                    difficult. Pack the fragile items in a towel or wrap them well and place them in two boxes for added protection. You should start packing as soon as you finish inventorying your belongings.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp;4- Try to pack and
+                                unload your luggage in a logical order
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    Start packing your luggage from the kitchen, as it is the most time-consuming room in the house for the abundance and variety of things in it. When you finish it, you will feel that you've done more than half of the work. Start unpacking your belongings
+                                    in the new house by arranging the children's room. Help them settle in first so that they can play or study while you are free for the rest of the house.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp;5- Put identification
+                                cards on the boxes
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    This step is essential and saves you a lot of time and effort. Put on each box a card that states the contents of the box, its correct position and the room in which it will be placed. Remember to place the cards on the side of the box so that you can
+                                    see them even when the boxes are on top of each other.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp; 6- Choose a color
+                                for every room in the house
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    Choose a color for each room in the house and put cards with that color on the room door and on the furniture and boxes designated for that room. This makes it easier for transport workers to put everything in its proper place.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp; 7- Attend a cleaning
+                                company
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    Try to get a cleaning company to clean the house the day before the day of the move, so you can start unpacking your original luggage. You can also use the kitchen and the bathrooms.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp; 8- Prepare a bag for
+                                the first night in the new house
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    It is best for everyone in the family to bring a small bag in which to put the items that will be needed for the first night in the house. You can also prepare a small box to put the things the family will need for the first night, such as coffee, snacks,
+                                    and an emergency first aid box. This way, you can sleep the first night even if you cannot finish unpacking and tidy up the entire house on the first day.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp;9- Do not forget to
+                                empty the refrigerator
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    Try to save on foodstuffs two weeks before transportation, so that you can consume foods in the home. Also remember to defrost and wipe the fridge a day before transport.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a data-toggle="collapse" class="collapsed" href="#faq1"> &nbsp; &nbsp; 10. Try to relax
+                                <i class="fa fa-minus-circle text-left"></i></a>
+                            <div id="faq1" class="collapse" data-parent="#faq-list">
+                                <p>
+                                    Try to relax and remember that everything will be fine, you will find the transportation from home much simpler if you keep your cool and good humor.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
