@@ -24,7 +24,7 @@ global.__basedir = require('path').resolve(__dirname, '..');
 const alqaqaa = express();
 var flash = require('connect-flash');
 require('./model/prod')(alqaqaa)
-db.connect('mongodb+srv://abdo2020:01123689625@temwork-vxavl.mongodb.net/alqaqaa?retryWrites=true&w=majority', {
+db.connect('', {
         useNewUrlParser: true,
         useCreateIndex: true,
         useFindAndModify: false,
